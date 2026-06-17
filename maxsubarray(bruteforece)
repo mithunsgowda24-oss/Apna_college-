@@ -1,0 +1,23 @@
+import java.util.*;
+public class arrays{
+    public static void maxSumSubarray(int arr[]){
+        int currentsum=0;int maxsum=Integer.MIN_VALUE;
+        for(int start=0;start<arr.length;start++){
+            for(int end=start;end<arr.length;end++){
+                currentsum=0;
+
+                for(int k=start;k<=end;k++){
+                      currentsum+=arr[k];
+                 }
+if(maxsum<currentsum){
+    maxsum=currentsum;
+}
+            }
+        }
+        System.out.println(maxsum);
+    }
+    public static void main(String[] args){
+        int arr[]={2,4,6,8,10};
+        maxSumSubarray(arr);
+    }
+}
